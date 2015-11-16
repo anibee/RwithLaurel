@@ -1,1 +1,22 @@
-# RwithLaurel
+% RwithLaurel
+%Add data
+a<-read.csv('Spider infection data.csv')
+%'$'to select particular columns
+x<-a$Site
+y<-a$Spider.Mass
+z<-a$Nematode.Count
+mean(y)
+sd(y)
+mean(z)
+sd(z)
+%subsetting
+a1<-a[1:16,]
+a2<-a[17:36,]
+mean(a1$Spider.Mass)
+sd(a1$Spider.Mass)
+mean(a2$Nematode.Count)
+sd(a2$Nematode.Count)
+%subplots
+par(mfcol=c(1,2))
+plot(a$Spider.Mass~a$Site, xlab= "Site", ylab= "Spider Mass", col = "gray")
+plot(a$Nematode.Count~a$Site, xlab="Site", ylab= "Nematode Count")
