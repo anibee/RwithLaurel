@@ -1,0 +1,19 @@
+##Challenge 1: Loading data, splitting, basic plots
+
+##read file
+spider_data<-read.csv(file.choose())
+
+##plot side by side, mfrow=c(rows,columns)
+par(mfrow=c(1,2))
+plot(spider_data$Site,spider_data$Spider.Mass,xlab="Site",ylab="Spider Mass (mg)",main="A")
+plot(spider_data$Site,spider_data$Nematode.Count, xlab="Site",ylab="Nematode Density (count)",main="B")
+
+##aggregate data based on list, mean and standard deviation
+aggregate.data.frame(spider_data$Nematode.Count, list(spider_data$Site), sd)
+aggregate.data.frame(spider_data$Nematode.Count, list(spider_data$Site), mean)
+
+##split data
+spidersplit<-split(spider_data,spider_data$Site)
+spidersplit
+sd(spidersplit$Basement.Hannah$Nematode.Count)
+sd(spidersplit$Attic.Ani$Nematode.Count)
