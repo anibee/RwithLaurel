@@ -1,0 +1,37 @@
+Challenge A: Data input
+1. Read in the attached data set (Spider infection data)
+2. Associate the column titles with the data
+3. View the column titles and first few lines of data to ensure that it has been read in
+4. View all data
+
+
+Hints: 
+•	The attached file is an excel document, but R is poor at reading all the excel formatting and prefers ."csv" format. (You may want to resave the file as a new file type)
+•	When you read in data, you will want to give the dataset a name within R so that you can reference and use it.
+spider_data<-read.csv(" <file_path>" )   [Replace <file_path> with the location of the data on your computer.
+
+Useful commands
+read.csv( )
+attach (spider_data)
+head (spider_data)
+Also try just typing the name of your dataset to see what happens.
+
+Challenge B: Data description
+1. Find the mean spider mass
+2. Find the standard deviation of nematode number across both sites
+Bonus points: Find the standard deviation of nematode number by site
+
+Useful commands
+mean( <Column name>)
+sd( <Column name>)
+
+Challenge C: Data visualization
+1. Make a graph that conveys spider mass in the two sites in a way that is clear and aesthetically appealing.
+Bonus points: 
+Place the spider graph side-by-side with a similar graph that shows nematode abundance in the sites.
+Plot spider size against the number of nematodes that infects it.
+
+Useful commands
+Plot (<Column 1>~ <Column 2>)
+Boxplot (<Column 1>~ <Column 2>)
+
