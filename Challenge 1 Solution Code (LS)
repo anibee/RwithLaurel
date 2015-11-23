@@ -1,0 +1,35 @@
+#R example code
+#Laurel Symes
+#11-13-2015
+
+#Challenge A
+spider_data<- read.csv("C:/Users/Laurel/Dropbox/Hannah-Laurel/R practice/Spider infection data.csv")
+#spider_data<- read.csv(file.choose())
+attach(spider_data)
+head(spider_data)
+spider_data
+
+#Challenge B
+mean(Spider.Mass)
+sd(Nematode.Count)
+spidersplit <- split(spider_data, Site)
+sd(spidersplit$Basement.Hannah$Nematode.Count)
+sd(spidersplit$Attic.Ani$Nematode.Count)
+
+#Challenge C
+plot(Spider.Mass~Site, ylab="Spider mass (mg)", xaxt="n")
+spider.label.pos<-c(1,2)
+spider.labels<-c("Ani's Attic", "Hannah's Basement")
+axis(1, at=spider.label.pos, labels=spider.labels)
+
+par(mfrow=c(1,2))
+
+plot(Spider.Mass~Site, ylab="Spider mass (mg)", xaxt="n")
+spider.label.pos<-c(1,2)
+spider.labels<-c("Ani's Attic", "Hannah's Basement")
+axis(1, at=spider.label.pos, labels=spider.labels)
+
+plot(Nematode.Count~Site, ylab="Nematode count", xaxt="n")
+spider.label.pos<-c(1,2)
+spider.labels<-c("Ani's Attic", "Hannah's Basement")
+axis(1, at=spider.label.pos, labels=spider.labels)
