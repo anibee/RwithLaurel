@@ -1,0 +1,73 @@
+#R challenge 2
+#11-17-2015
+#Laurel Symes
+
+				Part A: For loops
+One of the primary functions of a ‘for’ loop is to do something a certain number of times.
+
+It has the syntax 
+for (i in 1:10)
+{
+	<Do whatever is in here>
+}
+
+For loops often use letters to represent the count of how many times the loop has run. 
+Commonly used letters are i, j, and k, though others are used. When the loop begins, i will have the value of the number before the colon (here, a value of 1). 
+Each time it goes through the loop, the value will increase by 1 until it gets to the number after the colon (here, 10).
+
+It is also possible to use words instead of letters. This sometimes makes it easier to keep track of nested loops (nested loops means loops inside of loops). 
+
+To get a sense of how it works, try running this code (and modifying the numbers and variable names).
+
+########################CODE#########################
+
+#Example A (Counting for loop)
+for (generation in 1:10)
+{
+	print(paste('This is generation number:', generation),)
+}
+########################CODE#########################
+
+***Challenge: Write a for loop that prints a count-down to Thanksgiving (ie “There are [x] days left to Thanksgiving”)***
+
+#*****************************************************************************************************************************************************************
+							Part B: If statements
+An ‘if’ statement determines if the condition inside the parentheses is true. If the condition is true, the program runs the code inside the loop.
+
+It has the syntax
+x<-5
+if (x>3)
+{
+	print (“Too many miles to walk”)
+}
+
+If the condition is not met, nothing happens.
+It is also possible to write if-else statements, where the first set of code is completed if the condition is true and the second set of code is completed if it isn’t.
+Sometimes, it is useful to write multiple or nested if statements.
+
+The r code for testing whether something is equal to something else is a double equal sign (ie ==). 
+A single equal sign just sets the variable equal to the thing that you are testing it against. THIS IS BAD! YOU WANT TO AVOID THIS!!!!
+
+########################CODE#########################
+
+#Correct
+x<-3
+if (x==3)
+{
+	print("This is a nice distance to walk")
+}
+
+#Incorrect
+x<-200
+if (x=3)
+{
+		Print("This is a nice distance to walk")
+		Print("You have f-ed up and set x equal to 3, so your if statement will always be true. The best case scenario is that you will get an error message. The worst case scenario is that you will be using it in such a way that it runs. If so, you will be cursed by a mammoth headache trying to figure out why your code doesn’t work. Or, even worse, your code will be running rogue and you will publish without knowing it that it is wrong. Don’t do this. Don’t ever, ever do this.")
+}
+########################CODE#########################
+***Challenge**** Write a for loop that runs 10 times. Each time, generate a random number between 1 and 100 and print that number if the number is greater than 37.
+You might like the function "sample", which generates a random numbers. For example
+sample(0:20, 1)
+generates a random number between 0 and 20. If you changed the final number from 1 to 100, it would generate 100 random numbers betweeen 0 and 20.
+Sample will sample with replacement or without. Use the ?sample feature to pull up the online help for the function and figure out how to set with/without replacement.
+#*****************************************************************************************************************************************************************
