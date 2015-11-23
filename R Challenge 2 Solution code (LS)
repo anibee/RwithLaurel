@@ -1,0 +1,31 @@
+# Part A
+
+for (days in 8:1)
+{
+	print(paste('There are', days, 'days left to Thanksgiving'))
+}
+
+#Or, combine for and if statements for grammatical correctness 
+for (days in 8:1)
+{
+	if (days>1)
+	{
+		print(paste('There are', days, 'days left to Thanksgiving'))
+	}
+	if (days==1)
+	{
+		print(paste('There is', days, 'day left to Thanksgiving'))
+	}
+}
+
+
+#-------------------------------------------------------------
+#Part B
+for (i in 1:10)
+{
+	x<-sample(0:100, 1)
+	if (x>37)
+	{
+		print(x)
+	}
+}
