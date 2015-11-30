@@ -1,0 +1,33 @@
+##Challenge 2:  For Loops and if Statements
+
+##basic for loop syntax
+for(days in 5:1)
+{
+print(paste('There are',days,'days to Thanksgiving'))
+}
+
+##if within for 
+for(random in 1:10)
+{
+samples <- sample(0:100,1, replace=TRUE)
+if(samples>37)
+print(samples)
+}
+
+##Population Dynamics Challenge
+sim<-vector(length=20)
+sim[1]<-50
+for(generations in 2:20)
+{
+births<-sample(0:500,1, replace=TRUE)
+sim[generations]<-sim[generations-1]+births
+if(sim[generations]>500){
+sim[generations]<-sim[generations]/2
+}
+}
+print(sim)
+pop.track<-spline(sim)
+#par(mfrow=c(2,1))
+plot(sim,xlab="Generations",ylab="Number of Individuals")
+abline(h = 500)
+lines(pop.track)
