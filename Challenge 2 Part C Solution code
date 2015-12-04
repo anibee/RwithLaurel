@@ -1,0 +1,100 @@
+#----------------------------------------------------------------
+#Part C
+population_size<-vector(length=20)	
+
+population_size[1]<-50
+
+
+for (generation in 2:20)
+{
+	births<-sample(0:200, 1) #Generate a random number of births (between 0 and 20)
+	population_size[generation]<-population_size[generation-1]+ births
+
+	if (population_size[generation]>500)
+	{
+		population_size[generation]<-population_size[generation]/2
+	}
+}
+
+print(population_size)
+plot(population_size, xlab="Generations", ylab="Number of individuals")
+
+#----------------------------------------------------------------------
+#Part C Bonus 1
+population_size<-vector(length=20)	
+
+#Initial population size is 25 (store in first cell)
+population_size[1]<-50
+
+crash_count<-0
+
+for (generation in 2:20)
+{
+	births<-sample(0:200, 1) #Generate a random number of births (between 0 and 20)
+	population_size[generation]<-population_size[generation-1]+ births
+
+	if (population_size[generation]>500)
+	{
+		population_size[generation]<-population_size[generation]/2
+		crash_count<-crash_count+1
+	}
+}
+
+print(population_size)
+plot(population_size, xlab="Generations", ylab="Number of individuals")
+print(crash_count)
+
+#----------------------------------------------------------------------
+#Part C Bonus 2
+population_size<-vector(length=20)	
+
+population_size[1]<-50
+
+crash_count<-vector(length=10) # Values automatically initialize to zero
+
+for (iteration in 1:10)
+{
+	for (generation in 2:20)
+	{
+		births<-sample(0:200, 1) #Generate a random number of births (between 0 and 20)
+		population_size[generation]<-population_size[generation-1]+ births
+
+		if (population_size[generation]>500)
+		{
+			population_size[generation]<-population_size[generation]/2
+			crash_count[iteration]<-crash_count[iteration]+1
+		}
+	}
+}
+
+print(population_size)
+plot(population_size, xlab="Generations", ylab="Number of individuals")
+print(paste('The mean number of crashes was', mean(crash_count)))
+
+#----------------------------------------------------------------------
+#Part C Bonus 3
+population_size<-vector(length=20)	
+
+population_size[1]<-50
+birth_lim<-5
+
+par(mfrow=c(3,1))
+
+for (levels in 1:3)
+{
+	for (generation in 2:20)
+	{
+		births<-sample(0:birth_lim, 1) 
+		population_size[generation]<-population_size[generation-1]+ births
+
+		if (population_size[generation]>500)
+		{
+			population_size[generation]<-population_size[generation]/2
+		}
+	}
+	plot(population_size, xlab="Generations", ylab="Number of individuals")
+	track<-spline(population_size)
+	lines(track)
+	birth_lim<-birth_lim+100
+}
+
